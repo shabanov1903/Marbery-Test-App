@@ -45,7 +45,9 @@
     <template v-slot>
       <template v-if="data.length">
         <StatusCard v-for="item in computedData" :key="item" :status="'success'">
-          {{ item }}
+          <NuxtLink :to="link(item)">
+            {{ item }}
+          </NuxtLink>
         </StatusCard>
       </template>
       <template v-else>
@@ -64,14 +66,14 @@ import type { OrdersData } from "~/shared/api/internal/types";
 import { internalAPIFetch } from "~/shared/api/internal/instance";
 import { getForm, type OrdersForm } from "~/shared/config/orders-form";
 
-import FixedLeftColumn from "../../src/shared/ui/templates/fixed-left-column.vue";
-import InputDate from "../../src/shared/ui/inputs/input-date/index.vue";
-import Search from "../../src/shared/ui/search/index.vue";
-import Toggle from "../../src/shared/ui/toggle/index.vue";
-import Select from "../../src/shared/ui/select/index.vue";
-import Button from "../../src/shared/ui/button/index.vue";
-import StatusCard from "../../src/shared/ui/status-card/index.vue";
-import Empty from "../../src/shared/ui/empty/index.vue";
+import FixedLeftColumn from "../../../src/shared/ui/templates/fixed-left-column.vue";
+import InputDate from "../../../src/shared/ui/inputs/input-date/index.vue";
+import Search from "../../../src/shared/ui/search/index.vue";
+import Toggle from "../../../src/shared/ui/toggle/index.vue";
+import Select from "../../../src/shared/ui/select/index.vue";
+import Button from "../../../src/shared/ui/button/index.vue";
+import StatusCard from "../../../src/shared/ui/status-card/index.vue";
+import Empty from "../../../src/shared/ui/empty/index.vue";
 
 const form: Ref<OrdersForm> = ref(getForm());
 const data: Ref<string[]> = ref([]);
@@ -135,11 +137,11 @@ async function getData(query?: { type: string, value: string }) {
 
   data.value = [];
 }
+
+const link = (id: string) => `orders/${id}`;
 </script>
 
 <style scoped lang="scss">
-@import "~/shared/assets/styles/components/empty";
-
 .block {
   padding: 16px;
   margin-bottom: 15px;
