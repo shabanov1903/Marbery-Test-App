@@ -27,7 +27,7 @@
         </div>
 
         <div class="sub-block">
-          <Button @click="getYearData" :color="'gray-light'">
+          <Button :color="'gray-light'" @click="getYearData">
             Показать
           </Button>
 
