@@ -3,7 +3,7 @@
   "compilerOptions": {
     "types": ["@pinia/nuxt", "@nuxt/types", "@vueuse/nuxt"],
     "lib": ["dom", "dom.iterable"],
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": false
   },
   "build": {
     "transpile": ["@nuxt/kit"]
