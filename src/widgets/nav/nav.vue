@@ -227,6 +227,15 @@ const list = ref([
         }
       }
     ]
+  },
+  {
+    id: "test",
+    link: {
+      event: false,
+      classIcon: "fas fa-gears",
+      title: "Тест",
+      href: "/manager/orders"
+    }
   }
 ]);
 </script>

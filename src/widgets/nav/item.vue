@@ -1,6 +1,6 @@
 <template>
   <li class="nav__item" :class="{ nav__item_pd: isGap }">
-    <a class="nav__item-link" v-bind="item.link.attrs" :class="{ 'nav__item-link_sub-menu': isSubMenu }">
+    <a class="nav__item-link" v-bind="item.link.attrs" :class="{ 'nav__item-link_sub-menu': isSubMenu }" :href="item.link.href">
       <span v-if="item.link.classIcon" class="nav__icon">
         <i :class="item.link.classIcon" />
       </span>
